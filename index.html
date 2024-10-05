@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet House</title>
+    <link rel="shortcut icon" href="images/logo.webp" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .loader {
+        width: 50px;
+        aspect-ratio: 1;
+        display: grid;
+        border: 4px solid #0000;
+        border-radius: 50%;
+        border-right-color: #25b09b;
+        animation: l15 1s infinite linear;
+      }
+      .loader::before,
+      .loader::after {
+        content: "";
+        grid-area: 1/1;
+        margin: 2px;
+        border: inherit;
+        border-radius: 50%;
+        animation: l15 2s infinite;
+      }
+      .loader::after {
+        margin: 8px;
+        animation-duration: 3s;
+      }
+      @keyframes l15 {
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+      .active {
+        background: #0e7a81 !important;
+        color: white !important;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#0E7A81",
+              primary: "#131313",
+              secondary: "rgba(19,19,19,0.6)",
+            },
+            fontFamily: {
+              lato: ["Lato", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lato">
+    <header>
+      <nav class="container mx-auto">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Home</a></li>
+                <li>
+                  <a>Shope</a>
+                </li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost text-xl">
+              <img src="images/logo.webp" alt="logo" />
+              <span class="text-3xl text-primary font-black">Peddy</span>
+            </a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul
+              class="menu menu-horizontal px-1 text-base text-[16px] text-primary"
+            >
+              <li><a>Home</a></li>
+              <li>
+                <a href="#">Shope</a>
+              </li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a class="btn">
+              <img
+                src="https://img.icons8.com/?size=50&id=fUUEbUbXhzOA&format=gif"
+                alt="profile"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto">
+      <!-- banner part start -->
+      <section class="text-center pt-14 pb-24">
+        <div class="w-full lg:w-[752px] mx-auto mb-8">
+          <p class="text-secondary text-2xl font-bold">
+            Bringing Families Together ❤️‍🔥
+          </p>
+          <h1 class="text-7xl text-primary font-black mt-8 mb-6">
+            Your Path to Adoption Starts Here
+          </h1>
+          <p class="text-primary text-base">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+
+        <button class="btn bg-brand text-white" onclick="bestFriend()">
+          View More
+        </button>
+        <div class="flex justify-center items-center mt-12">
+          <img src="images/pet.webp" alt="pet" />
+        </div>
+      </section>
+      <!-- banner part end -->
+
+      <!-- Best Firend part start -->
+      <section id="bestFriend" class="pb-12">
+        <h2 class="text-4xl font-black text-center">Adopt Your Best Friend</h2>
+        <p
+          class="w-full lg:w-[636px] text-base text-secondary mt-6 text-center mx-auto"
+        >
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>
+      </section>
+      <!-- Best Firend part end -->
+
+      <!-- api button section start-->
+      <section
+        id="ApiButton"
+        class="flex justify-center items-center gap-6"
+      ></section>
+      <!-- api button section end-->
+
+      <!-- best deal section start -->
+      <section class="flex justify-between items-center pt-8 pb-[52px]">
+        <p class="text-2xl font-black">Best Deal For Your</p>
+        <button id="sortbtn"
+          class="btn bg-brand text-white font-bold text-xl hover:bg-brand hover:scale-105"
+        >
+          Sort by Price
+        </button>
+      </section>
+      <!-- best deal section end -->
+
+      <!-- api show all pets section start -->
+      <section
+        class="flex flex-col gap-6 lg:flex-row justify-center items-start"
+      >
+        <div id="preloader" class="loader hidden mx-auto"></div>
+        <div id="ShowApiPets" class="w-9/12 grid grid-cols-3 gap-6"></div>
+        <div
+          id="showpetImg"
+          class="w-3/12 shadow-white grid grid-cols-2  border-2 border-black border-solid"
+        ></div>
+      </section>
+      <!-- api show all pets section end -->
+
+      <!-- modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <div id="modalText"></div>
+          <div class="modal-action">
+            <form method="dialog" class="w-full">
+              <!-- if there is a button in form, it will close the modal -->
+              <button
+                class="btn w-full text-brand hover:bg-brand hover:text-white font-bold"
+              >
+                Cancle
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="my_modal_2" class="modal">
+        <div class="modal-box w-[400px] h-[300px]">
+          <div class="flex justify-center items-center"><img src="https://img.icons8.com/?size=48&id=q6BlPrJZmxHV&format=png" alt="handshake"></div>
+          <h3 class="text-3xl font-extrabold text-primary text-center my-3">Congrates</h3>
+          <p class="text-2xl font-base text-primary text-center">Adobtion Process Is Start For Your Pet</p>
+          <p id="countdownTime" class="text-3xl font-extrabold text-primary text-center mt-3"></p>
+        </div>
+      </dialog>
+    </main>
+    <footer></footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
