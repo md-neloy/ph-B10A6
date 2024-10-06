@@ -16,4 +16,4 @@ Peddy adoption website collect all kinds of animals and show their viewers all k
 5 . async function    
 6 .promises   
 ## Live Link  
-[click here for visite the peddy](https://voluble-gingersnap-d5318b.netlify.app/)
+[click here for visite the peddy](https://peddy-pets-house.netlify.app/)
