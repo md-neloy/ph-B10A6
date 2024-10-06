@@ -130,7 +130,7 @@ const displayAllPets = (pets) => {
                     <p class="flex gap-2 justify-normal items-center"><img src="./images/price.png"/><span>Price: ${pet.price}$</span></p>
                     <hr/>
                     <div class="card-actions justify-between items-center">
-                    <button class="btn btn-primary hover:border-brand hover:bg-brand bg-white shadow-white border-2 border-brand border-solid" onclick="addImg(${pet.petId})"><img class="w-5 h-5 fill-white object-fill" src="https://img.icons8.com/?size=50&id=24816&format=png"/></button>
+                    <button class="btn btn-primary hover:border-brand hover:bg-brand bg-white shadow-white border-2 border-brand border-solid" onclick="addImg(${pet.petId},this)"><img class="w-5 h-5 fill-white object-fill" src="https://img.icons8.com/?size=50&id=24816&format=png"/></button>
                     <button class="btn btn-primary hover:border-brand text-brand hover:bg-brand hover:text-white  bg-white shadow-white border-2 border-brand border-solid" onclick="handsakeModal(this)">Adopt</button>
                     <button  class="btn btn-primary hover:border-brand text-brand hover:bg-brand hover:text-white bg-white shadow-white border-2 border-brand border-solid" onclick="modalDesign(${pet.petId})">Details</button>
                     </div>
@@ -145,15 +145,28 @@ fectAllPets();
 
 // add the specific like pet images in the showpetImg div
 const showpetImg = document.getElementById("showpetImg");
-const addImg = async (petId) => {
+const addImg = async (petId,element) => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/pet/${petId}`
   );
   const data = await response.json();
   const imgDiv = document.createElement("div");
-  imgDiv.classList.add("h-[125px]");
-  imgDiv.innerHTML = `<img src="${data.petData.image}" class="w-full h-full"/>`;
-  showpetImg.appendChild(imgDiv);
+  // toggole for like background color
+  if (element.id == `id-${petId}`) {
+    element.id = "";
+    let childId = document.getElementById(`Cid-${petId}`);
+    element.classList.remove("bg-brand");
+    element.classList.add("bg-white");
+    childId.parentNode.removeChild(childId);
+  } else {
+    element.id = `id-${petId}`;
+    element.classList.add("bg-brand");
+    element.classList.remove("bg-white");
+    imgDiv.classList.add("lg:h-[125px]");
+    imgDiv.id = `Cid-${petId}`;
+    imgDiv.innerHTML = `<img src="${data.petData.image}" class="w-full h-full object-cover"/>`;
+    showpetImg.appendChild(imgDiv);
+  }
 };
 // create modalDesign function for details button
 const modalDesign = async (petId) => {
