@@ -181,7 +181,7 @@ const modalDesign = async (petId) => {
         <div class="card card-compact bg-base-100 w-full p-5 shadow-xl">
                 <figure>
                     <img
-                    class="h-[272px] object-cover"
+                    class="h-[272px] lg:object-cover"
                     src="${data.petData.image}"
                     alt="petImage" />
                 </figure>

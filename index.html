@@ -16,7 +16,10 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/db4977b755.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/db4977b755.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       .loader {
         width: 50px;
@@ -175,9 +178,12 @@
       <!-- api button section end-->
 
       <!-- best deal section start -->
-      <section class="flex flex-col lg:flex-row gap-4 justify-between items-center pt-8 pb-[52px]">
+      <section
+        class="flex flex-col lg:flex-row gap-4 justify-between items-center pt-8 pb-[52px]"
+      >
         <p class="text-2xl font-black">Best Deal For Your</p>
-        <button id="sortbtn"
+        <button
+          id="sortbtn"
           class="btn bg-brand text-white font-bold text-xl hover:bg-brand hover:scale-105"
         >
           Sort by Price
@@ -187,17 +193,21 @@
 
       <!-- api show all pets section start -->
       <section
-        class="flex flex-col gap-6 lg:flex-row justify-center items-start"
+        class="grid grid-cols-1 gap-6 lg:grid-cols-[75%_25%] justify-center items-start"
       >
+      <div class="order-1 lg:order-none">
         <div id="preloader" class="loader hidden mx-auto"></div>
-        <div id="ShowApiPets" class="w-full lg:w-9/12 grid grid-cols-1 lg:grid-cols-3 gap-6"></div>
         <div
-          
-          class="w-full lg:w-3/12 shadow-white  border-2 border-black border-solid"
-        >
-        <h3 class="font-black text-4xl py-3 px-2">Add Like Images Here:</h3>
-        <div id="showpetImg" class="grid grid-cols-1 lg:grid-cols-2"></div>
+          id="ShowApiPets"
+          class="w-full grid grid-cols-1 lg:grid-cols-3 gap-6 "
+        ></div>
       </div>
+        <div
+          class="w-full h-full bg-white shadow-lg"
+        >
+          <h3 class="font-black text-4xl py-3 px-2">Add Like Images Here:</h3>
+          <div id="showpetImg" class="grid grid-cols-1 lg:grid-cols-2"></div>
+        </div>
       </section>
       <!-- api show all pets section end -->
 
@@ -218,36 +228,76 @@
           </div>
         </div>
       </dialog>
-      
+
       <!-- Open the modal using ID.showModal() method -->
       <dialog id="my_modal_2" class="modal">
         <div class="modal-box lg:w-[400px] lg:h-[300px]">
-          <div class="flex justify-center items-center"><img src="https://img.icons8.com/?size=48&id=q6BlPrJZmxHV&format=png" alt="handshake"></div>
-          <h3 class="text-3xl font-extrabold text-primary text-center my-3">Congrates</h3>
-          <p class="text-2xl font-base text-primary text-center">Adobtion Process Is Start For Your Pet</p>
-          <p id="countdownTime" class="text-3xl font-extrabold text-primary text-center mt-3"></p>
+          <div class="flex justify-center items-center">
+            <img
+              src="https://img.icons8.com/?size=48&id=q6BlPrJZmxHV&format=png"
+              alt="handshake"
+            />
+          </div>
+          <h3 class="text-3xl font-extrabold text-primary text-center my-3">
+            Congrates
+          </h3>
+          <p class="text-2xl font-base text-primary text-center">
+            Adobtion Process Is Start For Your Pet
+          </p>
+          <p
+            id="countdownTime"
+            class="text-3xl font-extrabold text-primary text-center mt-3"
+          ></p>
         </div>
       </dialog>
     </main>
-    <footer class="bg-primary">
-      <div class="container grid grid-cols-1 lg:grid-cols-3 mx-auto py-3">
+    <footer class="bg-primary mt-20 py-24 px-4 lg:px-0">
+      <div class="container grid gap-5 grid-cols-1 lg:grid-cols-3 mx-auto py-3">
         <div>
           <a class="text-xl flex gap-3 justify-start items-center">
-                <div><img src="images/logo.webp" alt="logo" class="object-cover" /></div>
-                <span class="text-3xl text-primary text-white">Peddy</span>
+            <div>
+              <img src="images/logo.webp" alt="logo" class="object-cover" />
+            </div>
+            <span class="text-3xl text-primary text-white">Peddy</span>
           </a>
-          <p class="text-white text-base text-[16px] mb-3 mt-3">Phone: +31 85 964 47 25</p>
-          <p class="text-white text-base text-[16px] mb-3">Email: info@yourdomain.com</p>
-          <p class="text-white text-base text-[16px] mb-3">Openings hours: 9.00 AM - 5.00 PM</p>
+          <p class="text-white text-base text-[16px] mb-3 mt-3">
+            Location: av. Washington 165, NY CA
+          </p>
+          <p class="text-white text-base text-[16px] mb-3 mt-3">
+            Phone: +31 85 964 47 25
+          </p>
+          <p class="text-white text-base text-[16px] mb-3">
+            Email: info@yourdomain.com
+          </p>
+          <p class="text-white text-base text-[16px] mb-3">
+            Openings hours: 9.00 AM - 5.00 PM
+          </p>
           <div class="flex gap-3 justify-start items-center">
-            <span><img src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png" alt="facebook" class="w-6 h-6" ></span>
-            <span ><i class="fa-brands fa-x-twitter text-xl text-white"></i></span>
-            <span><img src="https://img.icons8.com/?size=48&id=19318&format=png" alt="youtube" class="w-6 h-6"></span>
-            <span><img src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png" alt="instagram" class="w-6 h-6"></span>
+            <span
+              ><img
+                src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png"
+                alt="facebook"
+                class="w-6 h-6"
+            /></span>
+            <span
+              ><i class="fa-brands fa-x-twitter text-xl text-white"></i
+            ></span>
+            <span
+              ><img
+                src="https://img.icons8.com/?size=48&id=19318&format=png"
+                alt="youtube"
+                class="w-6 h-6"
+            /></span>
+            <span
+              ><img
+                src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png"
+                alt="instagram"
+                class="w-6 h-6"
+            /></span>
           </div>
         </div>
         <div class="text-white">
-          <h3 class="text-2xl font-semibold mb-3">Usefull Links</h3>
+          <h3 class="text-xl font-semibold mb-3">Usefull Links</h3>
           <p class="mt-3 text-base text-[16px]"><a href="#">Home</a></p>
           <p class="mt-3 text-base text-[16px]"><a href="#">About us</a></p>
           <p class="mt-3 text-base text-[16px]"><a href="#">Animals</a></p>
@@ -255,12 +305,14 @@
           <p class="mt-3 text-base text-[16px]"><a href="#">Contact</a></p>
         </div>
         <div>
-          <h3>Drop a Massage</h3>
-          <form action="#">
-            <label for="mail" class="block">
-              <input id="mail" type="text" placeholder="Enter Your Email">
+          <h3 class="text-xl font-bold text-white">Drop a Massage</h3>
+          <form action="#" class="lg:w-1/2">
+            <label for="mail" class="block my-4">
+              <input id="mail" type="text" placeholder="Enter Your Email" class="py-4 pl-4 bg-transparent outline-1 outline-double outline-white text-white w-full"/>
             </label>
-            <button class="btn bg-brand text-white font-bold text-xl">Subscribe</button>
+            <button class="btn bg-brand text-white font-bold text-xl w-full">
+              Subscribe
+            </button>
           </form>
         </div>
       </div>
