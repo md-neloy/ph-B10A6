@@ -88,7 +88,7 @@ const displayAllPets = (pets) => {
   if (pets.length == 0) {
     ShowApiPets.classList.remove("grid");
     const nofoundDiv = document.createElement("div");
-    nofoundDiv.classList.add("bg-[rgba(19,19,19,0.3)]", "py-24");
+    nofoundDiv.classList.add("bg-[rgba(19,19,19,0.3)]", "py-24", "px-3");
     nofoundDiv.innerHTML = `
             <div class="flex justify-center items-center"><img src="./images/error.webp"/></div>
             <h3 class="text-primary text-3xl font-bold mt-6 mb-4 text-center">No Information Available</h3>
@@ -130,7 +130,7 @@ const displayAllPets = (pets) => {
                     <p class="flex gap-2 justify-normal items-center"><img src="./images/price.png"/><span>Price: ${pet.price}$</span></p>
                     <hr/>
                     <div class="card-actions justify-between items-center">
-                    <button class="btn btn-primary hover:border-brand hover:bg-brand bg-white shadow-white border-2 border-brand border-solid" onclick="addImg(${pet.petId},this)"><img class="w-5 h-5 fill-white object-fill" src="https://img.icons8.com/?size=50&id=24816&format=png"/></button>
+                    <button class="btn btn-primary hover:border-brand hover:bg-transparent bg-white shadow-white border-2 border-brand border-solid" onclick="addImg(${pet.petId},this)"><img class="w-5 h-5 fill-white object-fill" src="https://img.icons8.com/?size=50&id=24816&format=png"/></button>
                     <button class="btn btn-primary hover:border-brand text-brand hover:bg-brand hover:text-white  bg-white shadow-white border-2 border-brand border-solid" onclick="handsakeModal(this)">Adopt</button>
                     <button  class="btn btn-primary hover:border-brand text-brand hover:bg-brand hover:text-white bg-white shadow-white border-2 border-brand border-solid" onclick="modalDesign(${pet.petId})">Details</button>
                     </div>
@@ -155,13 +155,13 @@ const addImg = async (petId,element) => {
   if (element.id == `id-${petId}`) {
     element.id = "";
     let childId = document.getElementById(`Cid-${petId}`);
-    element.classList.remove("bg-brand");
-    element.classList.add("bg-white");
+    element.classList.remove("bg-brand","hover:bg-brand");
+    element.classList.add("bg-white","hover:bg-transparent");
     childId.parentNode.removeChild(childId);
   } else {
     element.id = `id-${petId}`;
-    element.classList.add("bg-brand");
-    element.classList.remove("bg-white");
+    element.classList.add("bg-brand","hover:bg-brand");
+    element.classList.remove("bg-white","hover:bg-transparent");
     imgDiv.classList.add("lg:h-[125px]");
     imgDiv.id = `Cid-${petId}`;
     imgDiv.innerHTML = `<img src="${data.petData.image}" class="w-full h-full object-cover"/>`;
